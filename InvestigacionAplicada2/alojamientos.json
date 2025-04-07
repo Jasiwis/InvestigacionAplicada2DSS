@@ -1,0 +1,23 @@
+[
+    {
+        "tipo": "Rancho",
+        "nombre": "Rancho Las Palmeras",
+        "capacidad": 20,
+        "precio_por_noche": 150,
+        "disponible": true
+    },
+    {
+        "tipo": "Hotel",
+        "nombre": "Hotel El Mirador",
+        "capacidad": 2,
+        "precio_por_noche": 90,
+        "disponible": false
+    },
+    {
+        "tipo": "Rancho",
+        "nombre": "Rancho El Refugio",
+        "capacidad": 15,
+        "precio_por_noche": 120,
+        "disponible": true
+    }
+]

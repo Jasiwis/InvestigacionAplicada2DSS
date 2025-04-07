@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - El Paraíso</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contáctanos</h1>
+            <p>Reservá tu alojamiento llenando el siguiente formulario:</p>
+        </header>
+
+        <main>
+            <form>
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required>
+
+                <label>Correo:</label>
+                <input type="email" name="correo" required>
+
+                <label>Fecha de reserva:</label>
+                <input type="date" name="fecha" required>
+
+                <label>Tipo de alojamiento:</label>
+                <select name="tipo" required>
+                    <option value="hotel">Hotel</option>
+                    <option value="rancho">Rancho</option>
+                </select>
+
+                <label>Mensaje:</label>
+                <textarea name="mensaje"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <a href="/" class="btn">Volver al inicio</a>
+        </main>
+    </div>
+</body>
+</html>
