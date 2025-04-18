@@ -1,0 +1,17 @@
+{
+    "name": "juani/investigacion-aplicada2dss-edenilson",
+    "autoload": {
+        "psr-4": {
+            "Juani\\InvestigacionAplicada2dssEdenilson\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "reyes",
+            "email": "jose.eche777@gmail.com"
+        }
+    ],
+    "require": {
+        "react/http": "^1.11"
+    }
+}

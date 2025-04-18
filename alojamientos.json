@@ -1,0 +1,65 @@
+[
+    {
+        "id": "5a8f7d3e1b2c9",
+        "tipo": "Rancho",
+        "nombre": "Rancho Las Palmeras",
+        "capacidad": 20,
+        "precio_por_noche": 400,
+        "disponible": true,
+        "imagen": "https:\/\/www.viajeroselsalvador.com\/uploads\/5\/6\/1\/0\/5610753\/published\/casa-costa-azul01.jpg?1611393089"
+    },
+    {
+        "id": "6b9e8f2a4d3c1",
+        "tipo": "Hotel",
+        "nombre": "Hotel El Mirador",
+        "capacidad": 2,
+        "precio_por_noche": 90,
+        "disponible": false,
+        "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcQUOQZztv9XjbVv9Psg-OXszdQ0jsjFJuCJRlhYzU10Emj8qHuQJI2ZRxs25VcdKnBz0iU&usqp=CAU"
+    },
+    {
+        "id": "3c2d1e5f8a9b7",
+        "tipo": "Rancho",
+        "nombre": "Rancho El Refugio",
+        "capacidad": 15,
+        "precio_por_noche": 120,
+        "disponible": true,
+        "imagen": "https:\/\/sophiabusiness.com\/uploads\/image\/Lujo_1(2).jpg"
+    },
+    {
+        "id": "67f843fb9bdc8",
+        "tipo": "Hotel",
+        "nombre": "Sol y playa",
+        "capacidad": 10,
+        "precio_por_noche": 300,
+        "disponible": false,
+        "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcS7tHfKRyPw9qZTYJpKbChNFQctRaub2pCqrmCJhK4IM9cInCV4pBBFcDf6RNAgDhgisbI&usqp=CAU"
+    },
+    {
+        "tipo": "Hotel",
+        "nombre": "Hojas",
+        "capacidad": 3,
+        "precio_por_noche": 150,
+        "disponible": true,
+        "id": "67f85f6eb0bac",
+        "imagen": "https:\/\/media-cdn.tripadvisor.com\/media\/photo-s\/1b\/3a\/d9\/17\/garten-hotel-in-playa.jpg"
+    },
+    {
+        "tipo": "Rancho",
+        "nombre": "Rancho Los Cocos",
+        "capacidad": 8,
+        "precio_por_noche": 200,
+        "disponible": true,
+        "imagen": "https:\/\/www.viajeroselsalvador.com\/uploads\/5\/6\/1\/0\/5610753\/casa-costa-azul04.jpg",
+        "id": "67f9b5c51cd06"
+    },
+    {
+        "tipo": "Caba\u00f1a",
+        "nombre": "Sol",
+        "capacidad": 4,
+        "precio_por_noche": 100,
+        "disponible": true,
+        "imagen": "https:\/\/i.pinimg.com\/564x\/d1\/42\/f2\/d142f2ecd5b64d38b7df7c54dbd0eb1c.jpg",
+        "id": "67f9baf7cde7c"
+    }
+]
