@@ -2,9 +2,9 @@
     {
         "id": "5a8f7d3e1b2c9",
         "tipo": "Rancho",
-        "nombre": "Rancho Las Palmeras",
-        "capacidad": 20,
-        "precio_por_noche": 400,
+        "nombre": "Rancho Las Palmeras Alegres 2",
+        "capacidad": 30,
+        "precio_por_noche": 449.98,
         "disponible": true,
         "imagen": "https:\/\/www.viajeroselsalvador.com\/uploads\/5\/6\/1\/0\/5610753\/published\/casa-costa-azul01.jpg?1611393089"
     },
@@ -25,15 +25,6 @@
         "precio_por_noche": 120,
         "disponible": true,
         "imagen": "https:\/\/sophiabusiness.com\/uploads\/image\/Lujo_1(2).jpg"
-    },
-    {
-        "id": "67f843fb9bdc8",
-        "tipo": "Hotel",
-        "nombre": "Sol y playa",
-        "capacidad": 10,
-        "precio_por_noche": 300,
-        "disponible": false,
-        "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcS7tHfKRyPw9qZTYJpKbChNFQctRaub2pCqrmCJhK4IM9cInCV4pBBFcDf6RNAgDhgisbI&usqp=CAU"
     },
     {
         "tipo": "Hotel",
@@ -61,5 +52,23 @@
         "disponible": true,
         "imagen": "https:\/\/i.pinimg.com\/564x\/d1\/42\/f2\/d142f2ecd5b64d38b7df7c54dbd0eb1c.jpg",
         "id": "67f9baf7cde7c"
+    },
+    {
+        "tipo": "Hotel",
+        "nombre": "as",
+        "capacidad": 5,
+        "precio_por_noche": 119.99,
+        "disponible": true,
+        "imagen": "https:\/\/cf.bstatic.com\/xdata\/images\/hotel\/max1024x768\/344395398.jpg?k=3ae89979b33dabc502f3d6616b8fdba46a503562c145f86ab4e92d92c3692688&o=&hp=1",
+        "id": "6802e7a590951"
+    },
+    {
+        "tipo": "Hotel",
+        "nombre": "Sol y playa",
+        "capacidad": 15,
+        "precio_por_noche": 300,
+        "disponible": true,
+        "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcS7tHfKRyPw9qZTYJpKbChNFQctRaub2pCqrmCJhK4IM9cInCV4pBBFcDf6RNAgDhgisbI&usqp=CAU",
+        "id": "6802f68ebe10c"
     }
 ]
