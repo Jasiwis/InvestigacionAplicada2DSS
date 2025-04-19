@@ -1,0 +1,101 @@
+[
+    {
+        "nombre": "Carlos",
+        "correo": "saul@gmail.com",
+        "telefono": "23432144",
+        "fecha_llegada": "2025-04-26",
+        "fecha_salida": "2025-05-06",
+        "tipo": "villa",
+        "huespedes": 4,
+        "mensaje": "quiero",
+        "id": "6804174c09da0"
+    },
+    {
+        "nombre": "Carlos",
+        "correo": "saul@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-25",
+        "fecha_salida": "2025-04-30",
+        "tipo": "rancho",
+        "huespedes": 3,
+        "mensaje": "lo quiero",
+        "id": "6804189d71799"
+    },
+    {
+        "nombre": "Carlos",
+        "correo": "saul@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-25",
+        "fecha_salida": "2025-04-30",
+        "tipo": "rancho",
+        "huespedes": 3,
+        "mensaje": "lo quiero",
+        "id": "680418a8d2d33"
+    },
+    {
+        "nombre": "ABNER",
+        "correo": "saul@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-26",
+        "fecha_salida": "2025-05-09",
+        "tipo": "rancho",
+        "huespedes": 3,
+        "mensaje": "lo quiero",
+        "id": "680418b9b735f"
+    },
+    {
+        "nombre": "Jasmin",
+        "correo": "Jasmin@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-26",
+        "fecha_salida": "2025-05-09",
+        "tipo": "rancho",
+        "huespedes": 2,
+        "mensaje": "lo quiero",
+        "id": "68041ae53ace1"
+    },
+    {
+        "nombre": "Rodrigo",
+        "correo": "rodrigo@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-25",
+        "fecha_salida": "2025-05-01",
+        "tipo": "villa",
+        "huespedes": 3,
+        "mensaje": "Necesito reservar lo más pronto posible",
+        "id": "68041b32d69ac"
+    },
+    {
+        "nombre": "Alejandro",
+        "correo": "ale@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-05-09",
+        "fecha_salida": "2025-05-23",
+        "tipo": "villa",
+        "huespedes": 4,
+        "mensaje": "contactense conmigo ya",
+        "id": "68041bc78ea55"
+    },
+    {
+        "nombre": "sol",
+        "correo": "sol@gmail.com",
+        "telefono": "2343-2144",
+        "fecha_llegada": "2025-04-25",
+        "fecha_salida": "2025-04-30",
+        "tipo": "villa",
+        "huespedes": 2,
+        "mensaje": "ya",
+        "id": "68041d29797a2"
+    },
+    {
+        "nombre": "hernezto",
+        "correo": "hernezto@gmail.com",
+        "telefono": "1234-4321",
+        "fecha_llegada": "2025-05-01",
+        "fecha_salida": "2025-05-02",
+        "tipo": "villa",
+        "huespedes": 3,
+        "mensaje": "necesito respuesta urgente",
+        "id": "68041eab954b0"
+    }
+]

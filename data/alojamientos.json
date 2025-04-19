@@ -66,9 +66,27 @@
         "tipo": "Hotel",
         "nombre": "Sol y playa",
         "capacidad": 15,
-        "precio_por_noche": 300,
+        "precio_por_noche": 350,
         "disponible": true,
         "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcS7tHfKRyPw9qZTYJpKbChNFQctRaub2pCqrmCJhK4IM9cInCV4pBBFcDf6RNAgDhgisbI&usqp=CAU",
         "id": "6802f68ebe10c"
+    },
+    {
+        "tipo": "Rancho",
+        "nombre": "Rancho Las Palmeras Alegres 3",
+        "capacidad": 5,
+        "precio_por_noche": 125,
+        "disponible": true,
+        "imagen": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcS7tHfKRyPw9qZTYJpKbChNFQctRaub2pCqrmCJhK4IM9cInCV4pBBFcDf6RNAgDhgisbI&usqp=CAU",
+        "id": "680326e265d3b"
+    },
+    {
+        "tipo": "Hotel",
+        "nombre": "Hotel Continental",
+        "capacidad": 5,
+        "precio_por_noche": 100,
+        "disponible": true,
+        "imagen": "https:\/\/cf.bstatic.com\/xdata\/images\/hotel\/max1024x768\/344395398.jpg?k=3ae89979b33dabc502f3d6616b8fdba46a503562c145f86ab4e92d92c3692688&o=&hp=1",
+        "id": "680345b96406d"
     }
 ]

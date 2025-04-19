@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use React\Http\HttpServer;
 use React\Http\Message\Response;
 use React\Socket\SocketServer;
+use React\EventLoop\Factory;
 use Psr\Http\Message\ServerRequestInterface;
 
 $loop = React\EventLoop\Loop::get();
@@ -75,7 +76,7 @@ $server = new HttpServer($loop, function (ServerRequestInterface $request) use (
 
 // API de Alojamientos - Rutas generales y específicas
 if (strpos($path, '/api/alojamientos') === 0) {
-    $jsonFile = $baseDir . '/alojamientos.json';
+    $jsonFile = $baseDir . '/data/alojamientos.json';
     
     try {
         // Leer archivo JSON
@@ -231,6 +232,210 @@ if (strpos($path, '/api/alojamientos') === 0) {
     }
 }
 
+// Ruta /data: muestra alojamientos en HTML o JSON según el header Accept
+    if ($method === 'GET' && $path === '/data') {
+        $jsonFile = $baseDir . '/data/alojamientos.json';
+
+        if (!file_exists($jsonFile)) {
+            return new Response(
+                404,
+                array_merge(['Content-Type' => 'text/plain'], $corsHeaders),
+                'Archivo de datos no encontrado'
+            );
+        }
+
+        $alojamientos = json_decode(file_get_contents($jsonFile), true);
+        $acceptHeader = $request->getHeaderLine('Accept');
+
+        if (strpos($acceptHeader, 'text/html') !== false) {
+            // Devolver tabla HTML
+            $html = '<html><head><title>Alojamientos</title><style>
+            body{font-family:sans-serif}table{border-collapse:collapse;margin:20px 0;} td,th{border:1px solid #ccc;padding:6px;text-align:left}
+            img{max-height:60px}
+            </style></head><body>';
+            $html .= '<h1>Lista de Alojamientos</h1>';
+            $html .= '<table><thead><tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Imagen</th>
+            <th>Capacidad</th>
+            <th>Precio por noche</th>
+            <th>Disponible</th>
+            </tr></thead><tbody>';
+
+            foreach ($alojamientos as $aloj) {
+                $id = htmlspecialchars($aloj['id'] ?? 'N/A');
+                $nombre = htmlspecialchars($aloj['nombre'] ?? 'N/A');
+                $tipo = htmlspecialchars($aloj['tipo'] ?? 'N/A');
+                $imagen = htmlspecialchars($aloj['imagen'] ?? '');
+                $capacidad = htmlspecialchars($aloj['capacidad'] ?? 'N/A');
+                $precio = htmlspecialchars($aloj['precio_por_noche'] ?? 'N/A');
+                $disponible = isset($aloj['disponible']) && $aloj['disponible'] ? 'Sí' : 'No';
+            
+                $html .= "<tr>
+                    <td>$id</td>
+                    <td>$nombre</td>
+                    <td>$tipo</td>
+                    <td><img src=\"$imagen\" alt=\"imagen\"></td>
+                    <td>$capacidad</td>
+                    <td>$$precio</td>
+                    <td>$disponible</td>
+                </tr>";
+            }
+
+            $html .= '</tbody></table></body></html>';
+
+            return new Response(
+                200,
+                array_merge(['Content-Type' => 'text/html'], $corsHeaders),
+                $html
+            );
+        } else {
+            // Devolver JSON
+            return new Response(
+                200,
+                array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+                json_encode($alojamientos)
+            );
+        }
+    }
+
+
+    // Ruta GET para mostrar contactos como HTML con Bootstrap
+if ($path === '/contact/contactos' && $method === 'GET') {
+    $jsonFile = $baseDir . '/contact/contactos.json';
+
+    if (!file_exists($jsonFile)) {
+        return new Response(
+            404,
+            array_merge(['Content-Type' => 'text/html'], $corsHeaders),
+            '<h1 class="text-center text-danger mt-5">404 - Archivo de contactos no encontrado.</h1>'
+        );
+    }
+
+    $contactos = json_decode(file_get_contents($jsonFile), true);
+
+    $html = '<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de Contactos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4 text-center text-primary">Contactos Recibidos</h1>
+            <table class="table table-striped table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Fecha de Llegada</th>
+                        <th>Fecha de Salida</th>
+                        <th>Tipo</th>
+                        <th>N.º Huéspedes</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+    foreach ($contactos as $c) {
+        $html .= '<tr>
+            <td>' . htmlspecialchars($c['nombre']) . '</td>
+            <td>' . htmlspecialchars($c['correo']) . '</td>
+            <td>' . htmlspecialchars($c['fecha_llegada']) . '</td>
+            <td>' . htmlspecialchars($c['fecha_salida']) . '</td>
+            <td>' . htmlspecialchars($c['tipo']) . '</td>
+            <td>' . htmlspecialchars($c['huespedes'] ?? 'No especificado') . '</td>
+            <td>' . nl2br(htmlspecialchars($c['mensaje'] ?? '')) . '</td>
+        </tr>';
+    }
+
+    $html .= '</tbody></table>
+            <div class="text-center mt-4">
+                <a href="/contact.html" class="btn btn-primary">Volver al formulario</a>
+            </div>
+        </div>
+    </body>
+    </html>';
+
+    return new Response(
+        200,
+        array_merge(['Content-Type' => 'text/html'], $corsHeaders),
+        $html
+    );
+}
+
+
+
+            // Ruta POST para enviar datos de contacto
+if ($path === '/contact' && $method === 'POST') {
+    $jsonFile = $baseDir . '/contact/contactos.json';
+
+    try {
+        // Obtener los datos enviados en la solicitud POST
+        $data = json_decode((string)$request->getBody(), true);
+
+        // Validación básica de los datos
+        if (
+            empty($data['nombre']) ||
+            empty($data['correo']) ||
+            empty($data['fecha_llegada']) ||
+            empty($data['fecha_salida']) ||
+            empty($data['tipo'])
+        ) {
+            return new Response(
+                400,
+                array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+                json_encode(['error' => 'Por favor complete todos los campos obligatorios.'])
+            );
+        }
+
+        // Si el archivo no existe, devolvemos 404
+        if (!file_exists($jsonFile)) {
+            return new Response(
+                404,
+                array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+                json_encode(['error' => 'Archivo de contactos no encontrado.'])
+            );
+        }
+
+        // Cargar contactos existentes y agregar el nuevo
+        $contactos = json_decode(file_get_contents($jsonFile), true);
+        $data['id'] = uniqid();
+        $contactos[] = $data;
+
+        // Guardar en el archivo JSON
+        file_put_contents($jsonFile, json_encode($contactos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+        return new Response(
+            200,
+            array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+            json_encode(['message' => 'Solicitud enviada correctamente.'])
+        );
+
+    } catch (Exception $e) {
+        return new Response(
+            500,
+            array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+            json_encode(['error' => 'Error interno del servidor: ' . $e->getMessage()])
+        );
+    }
+}
+
+// Si llega aquí y la ruta es /contacto pero no es POST, lanzar 404
+if ($path === '/contacto') {
+    return new Response(
+        404,
+        array_merge(['Content-Type' => 'application/json'], $corsHeaders),
+        json_encode(['error' => 'Ruta o método no válido para /contacto.'])
+    );
+}
+
+            
+
+    
     // Servir archivos estáticos y páginas HTML
     return serveFile($path, $baseDir);
 });
