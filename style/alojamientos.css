@@ -1,5 +1,3 @@
-
-
 .container-alo {
     max-width: 960px;
     margin: 20px auto;
@@ -55,12 +53,16 @@ h1, h2 {
     background-size: 1em;
 }
 
-.form-group .checkbox-group {
+.checkbox-group {
     display: flex;
+   
 }
 
 .checkbox-group input[type="checkbox"] {
-    margin-right: 5px; 
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+
 }
 
 .form-actions {
@@ -69,13 +71,9 @@ h1, h2 {
     justify-content: flex-end;
 }
 
-.btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.btn{
+    font-size: medium;
+    padding: 10px;
 }
 
 .btn-primary {
@@ -96,40 +94,6 @@ h1, h2 {
     background-color: #545b62;
 }
 
-.table-container {
-    overflow-x: auto;
-}
-
-#alojamientosTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-#alojamientosTable th,
-#alojamientosTable td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-#alojamientosTable th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    color: #333;
-}
-
-#alojamientosTable tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#alojamientosTable tbody tr:hover {
-    background-color: #e9ecef;
-}
-
 .actions {
     display: flex;
     gap: 5px;
@@ -144,13 +108,7 @@ h1, h2 {
     transition: background-color 0.3s ease;
 }
 
-.actions .edit-btn {
-    background-color: #ffc107;
-    color: #333;
-}
-
-
-.actions .delete-btn {
+.btn-delete {
     background-color: #dc3545;
     color: white;
 }
@@ -175,11 +133,6 @@ h1, h2 {
         transform: translateY(-5px);
     }
     
-    .card-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
     
     .card-body {
         padding: 15px;
@@ -195,13 +148,6 @@ h1, h2 {
         margin-bottom: 8px;
     }
     
-    .disponible {
-        color: green;
-    }
-    
-    .no-disponible {
-        color: red;
-    }
     
     .card-actions {
         display: flex;
